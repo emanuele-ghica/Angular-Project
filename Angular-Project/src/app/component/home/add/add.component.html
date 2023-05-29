@@ -1,0 +1,25 @@
+<div class ="login-container">
+  <form [formGroup]="addForm" (ngSubmit)="submit()">
+
+    <mat-form-field appearance="fill">
+      <mat-label>Position</mat-label>
+      <input matInput placeholder="Enter your wanted position" formControlName="position">
+      <mat-error> position is invalid </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Description</mat-label>
+      <textarea matInput placeholder="Discribe your skills" formControlName="description"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Salary</mat-label>
+      <input matInput placeholder="" formControlName="salary">
+      <mat-error> salary is invalod </mat-error>
+    </mat-form-field>
+
+    <button class="back-button" mat-raised-button color="primary" routerLink="/home" routerLinkActive="home">Back</button>
+
+    <button type="submit" class="save-button" mat-raised-button color="primary" routerLink="/home" routerLinkActive="home">Save</button>
+  </form>
+</div>

@@ -1,0 +1,44 @@
+:host {
+  display:block;
+  background-color: black;
+}
+
+div {
+  border-radius: 5%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: gray;
+  width: 350px;
+  height: 475px;
+
+
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+form, mat-form-field {
+  margin-top: 25px
+}
+
+mat-form-field {
+  width: 250px;
+}
+
+input::placeholder {
+  font: 12px sans-serif;
+}
+
+form .sign-up {
+  cursor: pointer;
+  color: #6A1B9A;
+}
+div form .login-button {
+  margin-top: 10px;
+}

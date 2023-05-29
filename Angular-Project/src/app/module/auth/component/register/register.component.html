@@ -1,0 +1,32 @@
+<div>
+  <form [formGroup]="registerForm" (ngSubmit)="submit()">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="name@example.com" formControlName="email" required>
+        <mat-error> Email is invalid </mat-error>
+      </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Username</mat-label>
+      <input matInput placeholder="Enter your username" formControlName="username" required>
+      <mat-error> Username is invalid </mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+      <mat-error> Password is invalid </mat-error>
+      <button mat-icon-button matSuffix (click)=" $event.preventDefault(); hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <p> Already have an account?</p> <p class="sign-up" routerLink="" routerLinkActive="">Login</p>
+
+    <button type="submit" class="register-button" mat-raised-button color="primary">Register</button>
+
+  </form>
+</div>
+
