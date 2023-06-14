@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-auth',
@@ -11,33 +12,42 @@ export class LoginComponent implements OnInit {
   public hide = true;
   public loginForm!: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder, private _router: Router) { }
+
+  constructor(private _formBuilder: FormBuilder, private _router: Router, private _http: HttpClient) {
+  }
 
   ngOnInit(): void {
     this.loginForm = this._formBuilder.group({
       username: ['', [
         Validators.required,
-        Validators.minLength(10),
-        Validators.maxLength(15),
-        Validators.pattern(/^[a-zA-Z0-9]*$/)
+
       ]],
       password: ['', [
         Validators.required,
-        Validators.minLength(8),
-        Validators.maxLength(20),
-        Validators.pattern(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/)
+
       ]]
     })
   }
 
   public submit(): void {
-    if (this.loginForm.valid) {
-      console.warn(this.loginForm.value)
-      this._router.navigate(['/home']);
-    }
+    this._http.get<any>("http://localhost:3000/users")
+      .subscribe(res => {
+        const user = res.find((a: any) => {
+          return a.username === this.loginForm.value.username && a.password === this.loginForm.value.password
+        });
+        if (user) {
+          alert("Login Success");
+          this.loginForm.reset();
+          this._router.navigate(['home'])
+        } else {
+          alert("User not found")
+        }
+      }, err => {
+        alert("Something went wrong")
+      })
   }
-}
 
+}
 
 
 

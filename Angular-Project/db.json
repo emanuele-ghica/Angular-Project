@@ -1,0 +1,54 @@
+{
+  "posts": [
+    {
+      "name": "Emanuele",
+      "id": 2,
+      "email": "gmanu12453@yahoo.com",
+      "salary": "312"
+    },
+    {
+      "id": 3,
+      "name": "Emanuele",
+      "email": "Emanuele@yahoo.com",
+      "salary": "12"
+    },
+    {
+      "id": 5,
+      "name": "Emanuele",
+      "email": "Emanueel@yahoo.com",
+      "salary": "21312"
+    },
+    {
+      "id": 6,
+      "name": "Emanuye",
+      "email": "oidfif@wfeh.com",
+      "salary": "2321"
+    }
+  ],
+  "users": [
+    {
+      "id": 0,
+      "email": "gmanu@yahoo.com",
+      "username": "emanuele",
+      "password": "123"
+    },
+    {
+      "username": "emanuele",
+      "id": 3,
+      "email": "e@y.c",
+      "password": "emanuele"
+    },
+    {
+      "username": "Emanuele",
+      "id": 4,
+      "email": "gmanu1406@yahoo.com",
+      "password": "Parolamea#1"
+    },
+    {
+      "username": "Manu",
+      "id": 5,
+      "email": "gmanu1406@yahoo.com",
+      "password": "Parolamea@1"
+    }
+  ]
+}

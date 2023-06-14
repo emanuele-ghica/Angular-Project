@@ -3,9 +3,31 @@
     <span class="crud-span" routerLink="/home">CRUD Application</span>
     <span class="example-spacer"></span>
     <button mat-raised-button class="example-icon favorite-icon" routerLink="/home" routerLinkActive="home"> Home </button>
-    <button mat-raised-button class="example-icon" routerLink="/home/add" routerLinkActive="add">Add</button>
+    <button mat-raised-button class="example-icon" (click)="openDialog()">Add Employee</button>
     <button mat-raised-button class="example-icon" routerLink="/login" routerLinkActive="login"> Logout </button>
   </mat-toolbar>
 </p>
 
-
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">Salary</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody >
+    <tr *ngFor="let row of employeeData">
+      <td>{{row.id}}</td>
+      <td>{{row.name}}</td>
+      <td>{{row.email}}</td>
+      <td>{{row.salary}}</td>
+      <td>
+        <button mat-raised-button color="primary" class="table-button" (click)="openDialog(row)">Edit</button>
+        <button mat-raised-button color="warn" class="table-button" (click)="deleteEmployee(row)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

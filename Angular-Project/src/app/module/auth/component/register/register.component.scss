@@ -1,5 +1,5 @@
 :host {
-  display:block;
+  display: block;
   background-color: black;
 }
 
@@ -13,8 +13,6 @@ div {
   background-color: gray;
   width: 350px;
   height: 475px;
-
-
 }
 form {
   display: flex;
@@ -23,8 +21,9 @@ form {
   align-items: center;
 }
 
-form, mat-form-field {
-  margin-top: 25px
+form,
+mat-form-field {
+  margin-top: 25px;
 }
 
 mat-form-field {
@@ -37,7 +36,7 @@ input::placeholder {
 
 form .sign-up {
   cursor: pointer;
-  color: #6A1B9A;
+  color: #6a1b9a;
 }
 div form .login-button {
   margin-top: 10px;

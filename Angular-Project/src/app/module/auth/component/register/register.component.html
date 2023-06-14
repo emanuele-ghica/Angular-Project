@@ -1,3 +1,11 @@
+<p>
+  <mat-toolbar class="toolbar" color="primary">
+    <span class="crud-span" routerLink="/home">CRUD Application</span>
+    <span class="example-spacer"></span>
+  </mat-toolbar>
+</p>
+
+
 <div>
   <form [formGroup]="registerForm" (ngSubmit)="submit()">
 
@@ -16,7 +24,7 @@
 
     <mat-form-field appearance="fill">
       <mat-label>Password</mat-label>
-      <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+      <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" formControlName="password">
       <mat-error> Password is invalid </mat-error>
       <button mat-icon-button matSuffix (click)=" $event.preventDefault(); hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
