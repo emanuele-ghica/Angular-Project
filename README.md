@@ -3,7 +3,7 @@
 
 	Steps to run the project:
 1. Install Node.js, Angular and json-server(within the project's terminal run the command "npm -install g json-server)
-2. Within the project's terminal run the commands: "json-server --watch db.json" to start the application's backend and "ng serve" to start frontend.
+2. Within the project's terminal run the commands: "json-server --watch db.json" to run the application's database and "ng serve" to run the project.
 3. In the browser open the webpage localhost:4200 and localhost:3000 for the database.
 
    Content:
